@@ -48,53 +48,66 @@ public class Main {
 
         System.out.println();
         double area = InputLen * inputWidth;
-        System.out.println(" Area of Plate : "+ area);
+        final int totalArea = (int) area;
+        System.out.println(" Area: "+ totalArea);
 
         System.out.println();
         System.out.print(  numberOfCUTs + " CUT " + " Enter Length CUT: ");
         double inputlenCut = scanner.nextDouble();
 
+        // Basic Conditional logic
         if (inputlenCut >= InputLen)
         {
-            System.out.println(" BAD Value FOR inputlenCut ");
+            System.out.println(" BAD Value FOR Length CUT ");
+        } else if (  inputlenCut < 0) {
+            System.out.println(" BAD Value FOR Length CUT : No negative  value ");
         } else  {
-            System.out.println(" GOOD Value FOR inputlenCut");
+
+            double TotalusedArea;
+            TotalusedArea =  inputlenCut * numberOfCUTs;
+            ///  Type Conversion
+            int incomingTotalArea = (int) TotalusedArea;
+            System.out.println();
+            System.out.println(" Total Incoming Area, After : "  +  incomingTotalArea);
+
+            double totalRemainingArea;
+            totalRemainingArea = InputLen - incomingTotalArea;
+            double currRemaingingArea = (double) totalRemainingArea;
+            System.out.println();
+            System.out.println(" After " +
+                    numberOfCUTs + " CUT " + "  Length CUT OF  " +   inputlenCut
+                    + " **Total  Remaining  Area** =  " + currRemaingingArea);
         }
-
-        double TotalusedArea;
-        TotalusedArea = inputlenCut * numberOfCUTs;
-        System.out.println();
-        System.out.println(" Total Good Size: " +  TotalusedArea);
-
-        double totalRemainingArea;
-        totalRemainingArea = InputLen - TotalusedArea;
-        System.out.println();
-        System.out.println(" Total Remaining  Size: " +  totalRemainingArea);
-
-
         /**
-         * Compound Asssignment Operators
-         * Combine an operation and assigment
-         * Apply right side value to left side
-         * Store result in variable on left side
+         * Compound Assignment Operators
+         * - Combine an operation with assignment
+         * - Apply the right-side value to the left-side variable
+         * - Store the result in the variable on the left side
          */
-        int mvalue = 50;
-        mvalue -= 5;
-        //  System.out.println(mvalue);
 
-        int othervalue = 100;
+/**
+ * Conditional Logic
+ * - Perform a test that results in true or false
+ * - Execute actions based on the test result
+ *
+ * Comparison Operators:
+ * - Greater than: >
+ * - Greater than or equal to: >=
+ * - Less than: <
+ * - Less than or equal to: <=
+ * - Equal to: ==
+ * - Not equal to: !=
+ *
+ * Ternary Operator:
+ * - condition ? trueValue : falseValue
+ *
+ * Logical Operators:
+ * - AND: &  (true & true)
+ * - OR: |  (false | true, true | false, true | true)
+ * - Exclusive OR (XOR): ^  (false ^ true, true ^ false)
+ * - Negation: !  (!false = true)
+ */
 
-        int val1 = 5;
-        int val2 = 10;
-
-        othervalue /= val1 * val2;
-        /**
-         * In this case
-         * Did 5 * 10
-         * Then
-         * 100 / 50
-         * 2
-         */
     }
 
 }
