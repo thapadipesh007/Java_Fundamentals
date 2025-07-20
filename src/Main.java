@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.concurrent.CopyOnWriteArraySet;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -55,29 +56,50 @@ public class Main {
         System.out.print(  numberOfCUTs + " CUT " + " Enter Length CUT: ");
         double inputlenCut = scanner.nextDouble();
 
-        // Basic Conditional logic
-        if (inputlenCut >= InputLen)
-        {
-            System.out.println(" BAD Value FOR Length CUT ");
-        } else if (  inputlenCut < 0) {
-            System.out.println(" BAD Value FOR Length CUT : No negative  value ");
-        } else  {
 
-            double TotalusedArea;
-            TotalusedArea =  inputlenCut * numberOfCUTs;
-            ///  Type Conversion
-            int incomingTotalArea = (int) TotalusedArea;
-            System.out.println();
-            System.out.println(" Total Incoming Area, After : "  +  incomingTotalArea);
+        System.out.println();
 
-            double totalRemainingArea;
-            totalRemainingArea = InputLen - incomingTotalArea;
-            double currRemaingingArea = (double) totalRemainingArea;
-            System.out.println();
-            System.out.println(" After " +
-                    numberOfCUTs + " CUT " + "  Length CUT OF  " +   inputlenCut
-                    + " **Total  Remaining  Area** =  " + currRemaingingArea);
+        // Basic Switch Statement
+        System.out.print( " Do you want to Start Operatrion Y or N : ");
+        char operationStart = scanner.next().charAt(0);
+
+        switch (operationStart) {
+            case 'Y':
+            case 'y':
+                // Basic Conditional logic
+                if (inputlenCut >= InputLen)
+                {
+                    System.out.println(" BAD Value FOR Length CUT ");
+                } else if (  inputlenCut < 0) {
+                    System.out.println(" BAD Value FOR Length CUT : No negative  value ");
+                } else  {
+
+                    double TotalusedArea;
+                    TotalusedArea =  inputlenCut * numberOfCUTs;
+                    ///  Type Conversion
+                    int incomingTotalArea = (int) TotalusedArea;
+                    System.out.println();
+                    System.out.println(" Total Incoming Area, After : "  +  incomingTotalArea);
+
+                    double totalRemainingArea;
+                    totalRemainingArea = InputLen - incomingTotalArea;
+                    double currRemaingingArea = (double) totalRemainingArea;
+                    System.out.println();
+                    System.out.println(" After " +
+                            numberOfCUTs + " CUT " + "  Length CUT OF  " +   inputlenCut
+                            + " **Total  Remaining  Area** =  " + currRemaingingArea);
+                }
+                break;
+            case 'N':
+            case 'n':
+                System.out.println(" END ");
+                break;
+            default:
+                System.out.println(" END ");
+                break;
         }
+
+
         /**
          * Compound Assignment Operators
          * - Combine an operation with assignment
