@@ -73,7 +73,6 @@ public class Main {
                 } else if (  inputlenCut < 0) {
                     System.out.println(" BAD Value FOR Length CUT : No negative  value ");
                 } else  {
-
                     double TotalusedArea;
                     TotalusedArea =  inputlenCut * numberOfCUTs;
                     ///  Type Conversion
@@ -98,8 +97,6 @@ public class Main {
                 System.out.println(" END ");
                 break;
         }
-
-
         /**
          * Compound Assignment Operators
          * - Combine an operation with assignment
@@ -129,6 +126,9 @@ public class Main {
  * - Exclusive OR (XOR): ^  (false ^ true, true ^ false)
  * - Negation: !  (!false = true)
  */
+
+
+
 
     }
 
